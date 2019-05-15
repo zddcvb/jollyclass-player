@@ -1,0 +1,63 @@
+package com.jollyclass.airplayer.util
+{
+	public class PathUtil
+	{
+		public function PathUtil()
+		{
+		}
+		public static function selectErrorPath(type:String):String
+		{
+			var str:String;
+			switch(type){
+				case "xsd_teacherbox":
+					str="/swf/error_xsd_teacherbox.swf";
+					break;
+				case "xsd_familybox":
+					str="/swf/error_xsd_familybox.swf";
+					break;
+				case "wtr_teacherbox":
+					str="/swf/error_wtr_teacherbox.swf";
+					break;
+				case "wtr_familybox":
+					str="/swf/error_wtr_familybox.swf";
+					break;
+				default:
+					str="/swf/error.swf";
+					break;
+			}
+			return str;
+		}
+		public static function selectPlayerPath(type:String):String{
+			var player_swf:String;
+			switch(type){
+				case "xsd_teacherbox":
+					player_swf="/swf/player_xsd_familybox.swf";
+					break;
+				case "wtr_familybox":
+					player_swf="/swf/player_wtr_familybox.swf";
+					break;
+				default:
+					player_swf="/swf/player.swf";
+					break;
+			}
+			return player_swf;
+		}
+		
+		public static function selectDialogPath(type:String):String
+		{
+			var dailog_swf:String;
+			switch(type){
+				case "xsd_teacherbox":
+					dailog_swf="/swf/dialog_xsd_teacherbox";
+					break;
+				case "wtr_teacherbox":
+					dailog_swf="/swf/dialog_wtr_teacherbox";
+					break;
+				default:
+					dailog_swf="/swf/dialog.swf";
+					break;
+			}
+			return dailog_swf;
+		}
+	}
+}

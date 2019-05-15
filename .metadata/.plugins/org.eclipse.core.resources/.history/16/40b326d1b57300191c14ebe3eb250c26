@@ -1,0 +1,10 @@
+package com.jollyclass.airplayer.domain
+{
+	public class Info extends DataInfo
+	{
+		public function Info()
+		{
+			super();
+		}
+	}
+}

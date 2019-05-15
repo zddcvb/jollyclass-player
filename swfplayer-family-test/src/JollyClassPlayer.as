@@ -10,10 +10,13 @@ package
 	import com.jollyclass.airplayer.factory.impl.CommonKeyCodeFactoryImpl;
 	import com.jollyclass.airplayer.factory.impl.JollyClassKeyCodeFactoryImpl;
 	import com.jollyclass.airplayer.service.KeyCodeService;
+	import com.jollyclass.airplayer.util.ImgUtil;
 	import com.jollyclass.airplayer.util.LoggerUtils;
 	import com.jollyclass.airplayer.util.ParseDataUtils;
+	import com.jollyclass.airplayer.util.PathUtil;
 	import com.jollyclass.airplayer.util.ShapeUtil;
 	import com.jollyclass.airplayer.util.SwfInfoUtils;
+	import com.jollyclass.airplayer.util.VideoUtil;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.DisplayObject;
@@ -29,8 +32,8 @@ package
 	import flash.events.KeyboardEvent;
 	import flash.events.TimerEvent;
 	import flash.filesystem.File;
+	import flash.media.Video;
 	import flash.net.URLRequest;
-	import flash.sampler.Sample;
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
 	import flash.utils.ByteArray;
@@ -44,18 +47,40 @@ package
 	{
 		private static var logger:LoggerUtils=new LoggerUtils("JollyClassPlayer");
 		/**
-		 * 2个动画的加载器和元件
+		 * 主swf文件的加载器
 		 */
 		private var _loader:Loader=new Loader();
+		/**
+		 * 开通服务对话框的加载器
+		 */
 		private var _dialog_loader:Loader=new Loader();
+		/**
+		 * 家庭端播放器进度条皮肤的加载器
+		 */
 		private var _player_loading:Loader=new Loader();
+		/**
+		 * 图片加载的loader，用于加载jpg、png、bmp文件
+		 */
+		private var imgLoader:Loader;
+		/**
+		 * 加载的主swf文件的元件
+		 */
 		private var course_mc:MovieClip;
+		/**
+		 * 加载的播放器皮肤元件，里面封装了控制播放器皮肤显示等各种方法
+		 */
 		private var player_mc:MovieClip;
+		/**
+		 * 加载的开通服务的对话框元件
+		 */
 		private var dialog_mc:MovieClip;
 		/**
-		 * 两个类型的计时器
+		 * 教学端计时器，间隔的时长由系统传递的参数_teaching_play_trial_duation决定
 		 */
 		private var teacherTimer:Timer;
+		/**
+		 * 家庭端显示播放条的计时器：间隔时长3s
+		 */
 		private var familyTimer:Timer;
 		/**
 		 * 两个内嵌的加载动画
@@ -65,10 +90,35 @@ package
 		[Embed(source="/swf/loading-family.swf")]
 		private var LoadingFamilyUI:Class;
 		private var loading_obj:DisplayObject;
+		/**
+		 * 接收从系统发送的数据
+		 */
 		private var dataInfo:JollyClassDataInfo;
+		/**
+		 * swf文件类，保存swf文件的相关信息
+		 */
 		private var swfInfo:SwfInfo;
+		/**
+		 * 播放器启动时的黑屏，随着swf文件加载成功和开始播放而卸载
+		 */
 		private var blackShape:Shape;
+		/**
+		 * 是否显示进度条
+		 */
 		private var isShowing:Boolean=false;
+		/**
+		 * 视频加载和播放工具类
+		 */
+		private var video_util:VideoUtil;
+		/**
+		 * mp4、flv视频的播放暂停控制，true为播放，false为暂停
+		 */
+		private var video_play_status:Boolean=true;
+		/**
+		 * mp4、flv视频全部停止和重新开始播放控制：true为重新播放，false为停止
+		 */
+		private var video_stop_status:Boolean=true;
+		
 		public function JollyClassPlayer()
 		{
 			super();
@@ -85,13 +135,13 @@ package
 			addMainApplicationKeyEvent();
 			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE,onInvokeHandler);
 			NativeApplication.nativeApplication.addEventListener(Event.DEACTIVATE,onDeactivateHandler);
+			
 		}
 		public function startOk():void{
 			showBlackUI();
 			addMainApplicationKeyEvent();
 			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE,onInvokeHandler);
 			NativeApplication.nativeApplication.addEventListener(Event.DEACTIVATE,onDeactivateHandler);
-			
 		}
 		private function loadSWF(path:String):void{
 			var _context:LoaderContext=new LoaderContext();
@@ -99,6 +149,9 @@ package
 			var _request:URLRequest=new URLRequest(path);
 			_loader.load(_request);
 			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onCompleteHandler);
+			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
+				sendAndShowErrorMsg(ErrorMsgNumber.LOAD_SWF_ERROR,dataInfo.customer_service_tel);
+			});
 		}
 		/**
 		 * 显示首屏的黑屏画面，避免flash加载的白屏出现
@@ -141,7 +194,8 @@ package
 			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
 				sendAndShowErrorMsg(ErrorMsgNumber.ERROR_LOADING_FAILED,dataInfo.customer_service_tel);
 			});
-			_error_loading.load(new URLRequest(PathConst.ERROR_SWF));
+			var error_swf_path:String=PathUtil.selectErrorPath(dataInfo.product_type);
+			_error_loading.load(new URLRequest(error_swf_path));
 		}
 		/**
 		 * 添加播放器皮肤，获得皮肤的影片剪辑,显示到界面中，但是visible属性为fasle，hiderPlayer方法即为隐藏，具体的方法执行在player.swf文件中。
@@ -157,7 +211,8 @@ package
 			_player_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
 				sendAndShowErrorMsg(ErrorMsgNumber.PLAYER_LOADING_FAILED,dataInfo.customer_service_tel);
 			});
-			_player_loading.load(new URLRequest(PathConst.PLAYER_SWF));
+			var player_swf:String=PathUtil.selectPlayerPath(dataInfo.product_type);
+			_player_loading.load(new URLRequest(player_swf));
 		}
 		/**
 		 * 卸载播放进度条
@@ -190,18 +245,86 @@ package
 		 */
 		protected function onInvokeHandler(event:InvokeEvent):void
 		{
-				var info:Array=new Array("my-customuri://result=/swf/5.swf&product_type=familybox&resource_type=xsd&customer_service_tel=12342453&package_name=com.ishuidi.boxproject&family_media_id=1234&family_material_id=123456");
-				dataInfo=ParseDataUtils.parseDataInfo(info);
+				trace("onInvokeHandler");
+				var info:Array=new Array("my-customuri://result=/swf/2.mp4&product_type=xsd_teacherbox&resource_type=xsd&customer_service_tel=13632220258&play_scene=0&teaching_resource_id=123456&teaching_play_trial_duration=10&package_name=com.ishuidi.boxproject&callback_activity_name= com.ishuidi.boxproject.module.index.OpenServiceActivity&family_media_id=1234&family_material_id=123456");
+				trace("info:"+info[0]);
+				dataInfo=ParseDataUtils.parseDataInfo2(info);
+				trace("dataInfo:"+dataInfo);
 				if(dataInfo!=null){
-					showLoadingUI(dataInfo.product_type);
+					//showLoadingUI(dataInfo.product_type);
 					removeChild(blackShape);
 					//readFileFromAndroidDIC(dataInfo.swfPath);
-					loadSWF(dataInfo.swfPath);
+					var path:String=dataInfo.swfPath;
+					if(path.indexOf(".mp4")!=-1||path.indexOf(".flv")!=-1){
+						initPlayer();
+					}else if(path.indexOf(".swf")!=-1){
+						loadSWF(dataInfo.swfPath);
+					}else if(path.lastIndexOf(".jpg")!=-1||path.lastIndexOf(".png")!=-1||path.lastIndexOf(".bmp")!=-1){
+						//加载图片。
+						loadImg(dataInfo.swfPath);
+					}else{
+						sendAndShowErrorMsg(ErrorMsgNumber.FILE_FORMAT_NOT_WRONG,FieldConst.DEFAULT_TELPHONE);
+					}				
 				}else{
 					sendAndShowErrorMsg(ErrorMsgNumber.PARSE_DATA_ERROR,FieldConst.DEFAULT_TELPHONE);
 				}
-			
 			NativeApplication.nativeApplication.removeEventListener(InvokeEvent.INVOKE,onInvokeHandler);
+		}
+		
+		private function initPlayer():void
+		{
+			video_util=new VideoUtil();
+			var video:Video=video_util.initVideo(1920,1080);
+			addChild(video);
+			video_util.initVedioPlayer(video,dataInfo.swfPath);
+			stage.removeEventListener(KeyboardEvent.KEY_DOWN,onKeyDownHandler);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,onVideoKeyDown);			
+		}
+		
+		protected function onVideoKeyDown(event:KeyboardEvent):void
+		{
+			var code:int=event.keyCode;
+			code=switchKeyCode(code,dataInfo.resource_type);
+			var nowTime:Number;
+			switch(code){
+				case SwfKeyCode.ENTER_XSD_CODE:
+					if(video_play_status){
+						video_util.pause();
+					}else{
+						video_util.resume();
+					}
+					video_play_status=!video_play_status;
+					break;
+				case SwfKeyCode.RIGHT_XSD_CODE:
+					//视频快进
+					nowTime=video_util.getCurrentTime()+5;
+					if(nowTime>=video_util.getTotalTime()){
+						nowTime=video_util.getTotalTime();
+						video_util.stop();
+						video_stop_status=true;
+					}else{
+						video_util.seek(nowTime);
+						video_play_status=true;
+					}
+					break;
+				case SwfKeyCode.LEFT_XSD_CODE:
+					//视频快退
+					nowTime=video_util.getCurrentTime()-5;
+					if(nowTime<=0){
+						nowTime=0;
+					}
+					if(video_stop_status){
+						video_stop_status=false;
+					}
+					video_util.seek(nowTime);
+					video_play_status=true;
+					break;
+				case SwfKeyCode.BACK_XSD_CODE:
+					onDestroy();
+					break;
+				default:
+					break;
+			}			
 		}
 		
 		private function initErrorKeyEvent():void
@@ -270,7 +393,9 @@ package
 			_context.allowCodeImport=true;
 			_context.applicationDomain=ApplicationDomain.currentDomain;
 			_loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onCompleteHandler);
-			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,onIOErrorHandler);	
+			_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
+				sendAndShowErrorMsg(ErrorMsgNumber.LOAD_SWF_ERROR,dataInfo.customer_service_tel);
+			});	
 			try
 			{
 				_loader.loadBytes(fileDataByteArray,_context);	
@@ -280,16 +405,14 @@ package
 				sendAndShowErrorMsg(ErrorMsgNumber.SWF_BYTE_LENGTH_ERROR,dataInfo.customer_service_tel);
 			}			
 		}
-		protected function onIOErrorHandler(event:IOErrorEvent):void
-		{
-			sendAndShowErrorMsg(ErrorMsgNumber.LOAD_SWF_ERROR,dataInfo.customer_service_tel);
-		}
 		
 		protected function onCompleteHandler(event:Event):void
 		{
 			course_mc = event.target.content as MovieClip;
 			addChild(_loader);
+			
 			//removeChild(loading_obj);
+			trace(dataInfo.product_type);
 			switchPlayerByProductType(dataInfo.product_type);
 			swfInfo=SwfInfoUtils.getSwfInfo(dataInfo,course_mc);
 			swfInfo.isPlaying=true;
@@ -308,15 +431,22 @@ package
 		{
 			switch(type)
 			{
-				case FieldConst.FAMILY_BOX:
+				case FieldConst.XSD_FAMILY_BOX:
+				case FieldConst.WTRON_FAMILY_BOX:
 				{
-					addPlayer();
+					if(course_mc.totalFrames<=FieldConst.INTERACTION_FRAME){
+						//当swf文件的总帧数小于50，则return，不执行onEnterFrameHandler事件
+						return;
+					}else{
+						addPlayer();
+					}
 					stage.addEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
 					break;
 				}
-				case FieldConst.TEACHING_BOX:
+				case FieldConst.XSD_TEACHER_BOX:
+				case FieldConst.WTRON_TEACHER_BOX:
 				{
-					if(dataInfo.teaching_status==0){
+					if(dataInfo.play_scene==0){
 						stopTeachingTimer();
 					}else{
 						startTeachingTimer();
@@ -344,10 +474,12 @@ package
 			if(course_mc!=null){
 				var _currentFrame:int=course_mc.currentFrame;
 				if(_currentFrame>=course_mc.totalFrames){
+					trace("enter");
 					course_mc.gotoAndStop(course_mc.totalFrames);
 					swfInfo.isPlaying=false;
 					stage.removeEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
-					onDestoryAndSendData();
+					//onDestoryAndSendData();
+					onPauseAndReplay();
 				}else{
 					if(player_mc){
 						player_mc.setNowTime(SwfInfoUtils.getSwfTimeFormatter(_currentFrame));
@@ -375,13 +507,18 @@ package
 			{
 				onDestoryAndSendData();	
 			}
-			if(dataInfo.product_type==FieldConst.FAMILY_BOX){
-				//子swf文件中若存在代码，则移除播放进度条。
-				if(course_mc.ENTER_CODE||course_mc.INTERACTION_FLAG){
-					//卸载播放进度条
-					unloadPlayer();
-				}else{
+			switch(dataInfo.product_type){
+				case FieldConst.FAMILY_BOX:
+				case FieldConst.XSD_FAMILY_BOX:
+				case FieldConst.WTRON_FAMILY_BOX:
+					if(course_mc.ENTER_CODE||course_mc.INTERACTION_FLAG){
+						//卸载播放进度条
+						unloadPlayer();
+						stage.removeEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
+						return;
+					}
 					if(course_mc.totalFrames<=FieldConst.INTERACTION_FRAME){
+						stage.removeEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
 						return;
 					}
 					player_mc.setSwfNameText(swfInfo.resource_name);
@@ -404,12 +541,10 @@ package
 							hidePg();
 							break;
 						default:
-						{
 							break;
-						}
 					}
-				}
-			}	
+					break;
+			}
 		}
 		/**
 		 * 执行遥控器键值映射
@@ -470,7 +605,9 @@ package
 				nextFrame=course_mc.totalFrames;
 				course_mc.gotoAndStop(nextFrame);
 				swfInfo.isPlaying=false;
-				onDestoryAndSendData();
+				player_mc.hidePlayer();
+				isShowing=false;
+				onPauseAndReplay();
 			}else{
 				setForwardAndRewind(nextFrame);
 			}
@@ -537,9 +674,12 @@ package
 		 */
 		private function startTeachingTimer():void
 		{
-			teacherTimer=new Timer(10000,1);
+			var duration:int=dataInfo.teaching_play_trial_duation;
+			trace(duration);
+			teacherTimer=new Timer(duration*1000,1);
 			teacherTimer.addEventListener(TimerEvent.TIMER_COMPLETE,function(event:TimerEvent):void{
-				loadDialogSwf(PathConst.DAILOG_SWF);
+				var dailog_swf:String=PathUtil.selectDialogPath(dataInfo.product_type);
+				loadDialogSwf(dailog_swf);
 				stopTeachingTimer();
 			});
 			teacherTimer.start();	
@@ -563,7 +703,6 @@ package
 			familyTimer.addEventListener(TimerEvent.TIMER_COMPLETE,function(event:TimerEvent):void{
 				if(isShowing){
 					player_mc.hideNameAndProgress();
-					//stage.removeEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
 					isShowing=false;
 					stopPlayerTimer();
 				}
@@ -585,22 +724,19 @@ package
 		private function loadDialogSwf(swfPath:String):void
 		{
 			_dialog_loader.load(new URLRequest(swfPath));
-			_dialog_loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onDialogCompleteHandler);
-			_dialog_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,onDialogErrorHandler);
+			_dialog_loader.contentLoaderInfo.addEventListener(Event.COMPLETE,function(event:Event):void{
+				dialog_mc=event.target.content as MovieClip;
+				addChild(_dialog_loader);
+				pauseMainSwf();
+				initDialogSwf();
+				stopTeachingTimer();
+				switchConnectOrService(dataInfo.play_scene);
+			});
+			_dialog_loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
+				sendAndShowErrorMsg(ErrorMsgNumber.DIALOG_LAODING_ERROR,dataInfo.customer_service_tel);
+			});
 		}
-		protected function onDialogCompleteHandler(event:Event):void
-		{
-			dialog_mc=event.target.content as MovieClip;
-			addChild(_dialog_loader);
-			pauseMainSwf();
-			initDialogSwf();
-			stopTeachingTimer();
-			switchConnectOrService(dataInfo.teaching_status)
-		}
-		protected function onDialogErrorHandler(event:IOErrorEvent):void
-		{
-			sendAndShowErrorMsg(ErrorMsgNumber.DIALOG_LAODING_ERROR,dataInfo.customer_service_tel);
-		}
+		
 		/**
 		 * 根据账户的类型,显示关联园所，还是开启服务。
 		 * @param status 账户的状态码
@@ -671,7 +807,7 @@ package
 		 */
 		public function openServiceApk():void{
 			unloadDialogUI();
-			if(dataInfo.teaching_status==1){
+			if(dataInfo.play_scene==1){
 				//AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.MAL_RENEW_NAME);
 			}else{
 				//AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.SERVER_OPEN_NAME);
@@ -684,13 +820,11 @@ package
 		public function onDestoryAndSendData():void
 		{
 			var exitInfo:SwfInfo=SwfInfoUtils.getSwfInfo(dataInfo,course_mc);
-			switch(dataInfo.product_type){
-				case FieldConst.TEACHING_BOX:
-					//AneUtils.sendTeachingData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.teaching_resource_id,exitInfo.play_time,exitInfo.total_time);
-					break;
-				case FieldConst.FAMILY_BOX:
-					//AneUtils.sendFamilyData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.family_media_id,exitInfo.family_material_id,exitInfo.play_time,exitInfo.total_time);
-					break;
+			var type:String=dataInfo.product_type;
+			if(type.indexOf(FieldConst.TEACHING_BOX)!=-1){
+				//AneUtils.sendTeachingData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.teaching_resource_id,exitInfo.play_time,exitInfo.total_time);
+			}else if(type.indexOf(FieldConst.FAMILY_BOX)!=-1){
+				//AneUtils.sendFamilyData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.family_media_id,exitInfo.family_material_id,exitInfo.play_time,exitInfo.total_time);
 			}
 			NativeApplication.nativeApplication.exit(0);
 		}
@@ -700,6 +834,50 @@ package
 		public function onDestroy():void
 		{
 			NativeApplication.nativeApplication.exit(0);
+		}
+		private function onPauseAndReplay():void
+		{
+			showReplay();
+			var exitInfo:SwfInfo=SwfInfoUtils.getSwfInfo(dataInfo,course_mc);
+			var type:String=dataInfo.product_type;
+			if(type.indexOf(FieldConst.TEACHING_BOX)!=-1){
+				//AneUtils.sendTeachingData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.teaching_resource_id,exitInfo.play_time,exitInfo.total_time);
+			}else if(type.indexOf(FieldConst.FAMILY_BOX)!=-1){
+				//AneUtils.sendFamilyData(PathConst.APK_BROADCAST,exitInfo.isPlaying,exitInfo.isEnd,exitInfo.family_media_id,exitInfo.family_material_id,exitInfo.play_time,exitInfo.total_time);
+			}
+		}
+		/**
+		 * 显示重播页面
+		 */
+		private function showReplay():void
+		{
+			//增加重播建，开启重播功能，卸载原有的按键事件
+			loadImg(PathConst.REPLAY_PNG);
+			stage.removeEventListener(KeyboardEvent.KEY_DOWN,onKeyDownHandler);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,onReplayLoaderHandler);
+		}
+		/**
+		 * 增加重播图标
+		 */
+		private function loadImg(imgPath:String):void
+		{
+			var imgUtil:ImgUtil=new ImgUtil();
+			imgLoader = imgUtil.loadImg(imgPath);
+			addChild(imgLoader);
+		}
+		/**
+		 * 增加重播按键功能
+		 */
+		protected function onReplayLoaderHandler(event:KeyboardEvent):void
+		{
+			var code:int=switchKeyCode(event.keyCode,dataInfo.resource_type);
+			if(code==SwfKeyCode.ENTER_XSD_CODE){
+				course_mc.gotoAndPlay(1);
+				swfInfo.isPlaying=true;
+				imgLoader.unload();
+				stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDownHandler);
+				stage.removeEventListener(KeyboardEvent.KEY_DOWN,onReplayLoaderHandler);
+			}
 		}
 		
 	}

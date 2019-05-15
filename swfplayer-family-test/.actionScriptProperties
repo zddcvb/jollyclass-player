@@ -62,7 +62,7 @@
       <actionScriptSettings version="1"/>
     </buildTarget>
     <buildTarget airDownloadURL="https://market.android.com/details?id=com.adobe.air" androidSettingsVersion="2" buildTargetName="device" isCurrent="true" platformId="com.adobe.flexide.multiplatform.android.platform">
-      <airSettings airCertificatePath="F:/新播放器/toastAne/jollyclass-key.p12" airTimestamp="true" anePathSet="true" version="1">
+      <airSettings airCertificatePath="F:/鏂版挱鏀惧櫒/toastAne/jollyclass-key.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths>
           <anePathEntry path="libs/JollyClassAne.ane"/>
@@ -89,3 +89,4 @@
     </buildTarget>
   </buildTargets>
 </actionScriptProperties>
+

@@ -1,0 +1,31 @@
+package com.jollyclass.airplayer.util
+{
+	public class PathUtil
+	{
+		public function PathUtil()
+		{
+		}
+		public static function selectErrorPath(type:String):String
+		{
+			var str:String;
+			switch(type){
+				case "xsd_teacherbox":
+					str="/swf/error_xsd_teacherbox.swf";
+					break;
+				case "xsd_familybox":
+					str="/swf/error_xsd_familybox.swf";
+					break;
+				case "wtr_teacherbox":
+					str="/swf/error_wtr_teacherbox.swf";
+					break;
+				case "wtr_familybox":
+					str="/swf/error_wtr_familybox.swf";
+					break;
+				default:
+					str="/swf/error.swf";
+					break;
+			}
+			return str;
+		}
+	}
+}

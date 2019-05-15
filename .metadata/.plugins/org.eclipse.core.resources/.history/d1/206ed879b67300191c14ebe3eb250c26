@@ -1,0 +1,22 @@
+package com.jollyclass.airplayer.domain
+{
+	public class Info extends DataInfo
+	{
+		private var _name:String;
+		public function Info()
+		{
+			//super();
+		}
+
+		public function get name():String
+		{
+			return _name;
+		}
+
+		public function set name(value:String):void
+		{
+			_name = value;
+		}
+
+	}
+}

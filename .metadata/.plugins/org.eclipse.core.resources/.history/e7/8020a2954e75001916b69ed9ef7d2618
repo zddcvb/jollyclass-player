@@ -1,0 +1,19 @@
+package com.jollyclass.airplayer.util
+{
+	public class PathUtil
+	{
+		public function PathUtil()
+		{
+		}
+		public static function selectPath(type:String,args:Array,paths:Array):String
+		{
+			switch(type){
+				for(var key in args){
+					case key;
+					break;
+				}
+			}
+			return null;
+		}
+	}
+}

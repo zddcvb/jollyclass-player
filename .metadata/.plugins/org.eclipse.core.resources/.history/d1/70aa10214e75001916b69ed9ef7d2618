@@ -1,0 +1,9 @@
+package com.jollyclass.airplayer.util
+{
+	public class PathUtil
+	{
+		public function PathUtil()
+		{
+		}
+	}
+}

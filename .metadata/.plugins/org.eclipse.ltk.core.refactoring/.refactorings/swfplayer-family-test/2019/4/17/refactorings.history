@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将资源“swfplayer-family-test/src/swf/三只小猪_故事理解.swf”重命名为“6.swf”" description="重命名资源“三只小猪_故事理解.swf”" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/swf/三只小猪_故事理解.swf" name="6.swf" stamp="1556068204882" updateReferences="true"/>
+</session>

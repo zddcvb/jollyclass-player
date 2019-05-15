@@ -1,0 +1,71 @@
+package com.jollyclass.airplayer.util
+{
+	import com.jollyclass.airplayer.constant.FieldConst;
+	import com.jollyclass.airplayer.constant.PathConst;
+	/**
+	 * swf路径选择工具类，根据不同的product_type进行选择，主要针对以下几种swf文件进行选择：
+	 * 1、error信息的swf文件，根据不同的type，选择不同的error文件
+	 * 2、player播放器皮肤swf文件，根据不同的type，显示不同的player
+	 * 3、dailog信息的swf文件，根据不同的type，显示不同的开通服务dailgo文件。
+	 */
+	public class PathUtil
+	{
+		public function PathUtil()
+		{
+		}
+		public static function selectErrorPath(type:String):String
+		{
+			var str:String;
+			switch(type){
+				case FieldConst.XSD_TEACHER_BOX:
+					str=PathConst.ERROR_XSD_TEACHERBOX_SWF;
+					break;
+				case FieldConst.XSD_FAMILY_BOX:
+					str=PathConst.ERROR_XSD_FAMILYBOX_SWF;
+					break;
+				case FieldConst.WTRON_TEACHER_BOX:
+					str=PathConst.ERROR_WTRON_TEACHERBOX_SWF;
+					break;
+				case FieldConst.WTRON_FAMILY_BOX:
+					str=PathConst.ERROR_WTRON_FAMILYBOX_SWF;
+					break;
+				default:
+					str=PathConst.ERROR_SWF;
+					break;
+			}
+			return str;
+		}
+		public static function selectPlayerPath(type:String):String{
+			var player_swf:String;
+			switch(type){
+				case FieldConst.XSD_FAMILY_BOX:
+					player_swf=PathConst.PLAYER_XSD_FAMILYBOX_PATH;
+					break;
+				case FieldConst.WTRON_FAMILY_BOX:
+					player_swf=PathConst.PLAYER_WTRON_FAMILYBOX_PATH;
+					break;
+				default:
+					player_swf=PathConst.PLAYER_SWF;
+					break;
+			}
+			return player_swf;
+		}
+		
+		public static function selectDialogPath(type:String):String
+		{
+			var dailog_swf:String;
+			switch(type){
+				case FieldConst.XSD_TEACHER_BOX:
+					dailog_swf=PathConst.DAILOG_XSD_TEACHERBOX_SWF;
+					break;
+				case FieldConst.WTRON_TEACHER_BOX:
+					dailog_swf=PathConst.DAILOG_WTRON_TEACHERBOX_SWF;
+					break;
+				default:
+					dailog_swf=PathConst.DAILOG_SWF;
+					break;
+			}
+			return dailog_swf;
+		}
+	}
+}
