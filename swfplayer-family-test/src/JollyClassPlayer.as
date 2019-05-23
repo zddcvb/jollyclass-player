@@ -188,13 +188,19 @@ package
 				if(telNum==null||telNum==""){
 					telNum=FieldConst.DEFAULT_TELPHONE;
 				}
-				error_mc.setText(info,telNum);
+				var error_msg:String=info.substr(0,info.indexOf(":"));
+				trace(error_msg);
+				error_mc.setText(error_msg,telNum);
 				initErrorKeyEvent();
 			});
 			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
 				sendAndShowErrorMsg(ErrorMsgNumber.ERROR_LOADING_FAILED,dataInfo.customer_service_tel);
 			});
-			var error_swf_path:String=PathUtil.selectErrorPath(dataInfo.product_type);
+			var type:String;
+			if(dataInfo!=null){
+				type=dataInfo.product_type;
+			}
+			var error_swf_path:String=PathUtil.selectErrorPath(type);
 			_error_loading.load(new URLRequest(error_swf_path));
 		}
 		/**
@@ -230,6 +236,7 @@ package
 		 */
 		private function sendAndShowErrorMsg(info:String,telNum:String):void
 		{
+			trace(info);
 			showErroMsg(info,telNum);
 		}
 		/**
@@ -246,7 +253,7 @@ package
 		protected function onInvokeHandler(event:InvokeEvent):void
 		{
 				trace("onInvokeHandler");
-				var info:Array=new Array("my-customuri://result=/swf/2.mp4&product_type=xsd_teacherbox&resource_type=xsd&customer_service_tel=13632220258&play_scene=0&teaching_resource_id=123456&teaching_play_trial_duration=10&package_name=com.ishuidi.boxproject&callback_activity_name= com.ishuidi.boxproject.module.index.OpenServiceActivity&family_media_id=1234&family_material_id=123456");
+				var info:Array=new Array("my-customuri://result=/swf/1.swf&product_type=xsd_teacherbox&resource_type=xsd&customer_service_tel=13632220258&play_scene=0&teaching_resource_id=123456&teaching_play_trial_duration=10&package_name=com.ishuidi.boxproject&callback_activity_name= com.ishuidi.boxproject.module.index.OpenServiceActivity");
 				trace("info:"+info[0]);
 				dataInfo=ParseDataUtils.parseDataInfo2(info);
 				trace("dataInfo:"+dataInfo);
@@ -410,7 +417,6 @@ package
 		{
 			course_mc = event.target.content as MovieClip;
 			addChild(_loader);
-			
 			//removeChild(loading_obj);
 			trace(dataInfo.product_type);
 			switchPlayerByProductType(dataInfo.product_type);
@@ -582,7 +588,8 @@ package
 			}else{
 				if(course_mc.currentFrame==course_mc.totalFrames){
 					course_mc.gotoAndStop(course_mc.totalFrames);
-					onDestoryAndSendData();
+					//onDestoryAndSendData();
+					onPauseAndReplay();
 				}else{
 					course_mc.play();
 					player_mc.hidePlayer();

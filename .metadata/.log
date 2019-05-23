@@ -1935,3 +1935,580 @@ Caused by: java.lang.NullPointerException
 	at com.adobe.flash.compiler.internal.projects.CompilerProject$ScopeMakerFunction.apply(CompilerProject.java:95)
 	at com.google.common.collect.ComputingConcurrentHashMap$ComputingSegment.compute(ComputingConcurrentHashMap.java:155)
 	... 26 more
+!SESSION 2019-05-16 09:22:55.144 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2019-05-16 09:25:00.516
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 09:25:00.516
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@c25b3d5),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@c25b3d5),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,工作空间中的声明,
+		在工作空间中搜索对所选元素的声明,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 09:25:00.516
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@7f416b2d),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@7f416b2d),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,工作空间中的引用,
+		在工作空间中搜索对所选元素的引用,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+I:
+Binding(CTRL+I,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.organize.autoindent,更正缩进,
+		,
+		Category(com.adobe.flexbuilder.as.editor.source.editing.category,ActionScript 源代码编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.active.elements,格式化活动元素,
+		格式化活动元素,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@77c5a0e6)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.organize.autoformat,应用格式化,
+		,
+		Category(com.adobe.flexbuilder.as.editor.source.editing.category,ActionScript 源代码编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.format.document,格式化,
+		格式化所选内容,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@4fc69978)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+O:
+Binding(CTRL+O,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.quick.outline,快速大纲,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+O,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.quick_outline,快速大纲,
+		显示编辑器输入的快速大纲,
+		Category(org.eclipse.ui.category.navigate,浏览,null,true),
+		org.eclipse.wst.sse.ui.internal.quickoutline.QuickOutlineHandler@7785be32,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.go.to.brace,转至匹配的中括号,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.m2e.core.ui.command.addPlugin,Add Maven Plugin,
+		Add Maven Plugin,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.core.runtime.xml,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.goto.matching.bracket,匹配的中括号,
+		转至匹配的中括号,
+		Category(org.eclipse.ui.category.navigate,浏览,null,true),
+		org.eclipse.wst.sse.ui.StructuredTextEditor$GotoMatchingBracketHandler@6d8a01eb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.go.to.definition,打开声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,打开声明,
+		对所选元素打开编辑器,
+		Category(org.eclipse.ui.category.navigate,浏览,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.open.file.from.source,打开所选内容,
+		对所选链接打开编辑器,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.wst.sse.ui.internal.hyperlink.OpenHyperlinkAction@7f84237b)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.toggle.comment,切换注释,
+		切换注释,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.wst.sse.ui.internal.handlers.ToggleLineCommentHandler@516201c0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(com.adobe.flexide.editorcore.add.comment,切换块注释,
+		,
+		Category(com.adobe.flexbuilder.editorcore.flex.edit,Flex 编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+SHIFT+\:
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.mxml.editor.ShowPreviousStateCommand,上一个状态,
+		,
+		Category(com.adobe.flexbuilder.mxml.editor.stateNav,MXML 状态可视化,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+\,
+	ParameterizedCommand(Command(org.eclipse.wst.sse.ui.remove.block.comment,删除块注释,
+		删除块注释,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		org.eclipse.wst.sse.ui.internal.handlers.RemoveBlockCommentHandler@794cf55e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.wst.sse.ui.structuredTextEditorScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-16 17:14:17.416
+!MESSAGE A conflict occurred for CTRL+SHIFT+D:
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Display,显示,
+		显示对所选文本求值的结果,
+		Category(org.eclipse.debug.ui.category.run,运行/调试,运行/调试命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(org.eclipse.m2e.core.ui.command.addDependency,Add Maven Dependency,
+		Add Maven Dependency,
+		Category(org.eclipse.ui.category.edit,编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.core.runtime.xml,,,system)
+Binding(CTRL+SHIFT+D,
+	ParameterizedCommand(Command(com.adobe.flexide.editorcore.add.other.comment,添加其它注释,
+		,
+		Category(com.adobe.flexbuilder.editorcore.flex.edit,Flex 编辑,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+!SESSION 2019-05-17 09:15:49.757 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2019-05-17 09:19:38.891
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-17 09:19:38.891
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@73ceaf4c),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@73ceaf4c),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,工作空间中的声明,
+		在工作空间中搜索对所选元素的声明,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-17 09:19:38.891
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@656e1fa),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@656e1fa),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,工作空间中的引用,
+		在工作空间中搜索对所选元素的引用,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2019-05-21 10:03:27.907 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2019-05-21 10:05:20.854
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-21 10:05:20.855
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@90642c5),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@90642c5),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,工作空间中的声明,
+		在工作空间中搜索对所选元素的声明,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-21 10:05:20.855
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@7a099823),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@7a099823),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,工作空间中的引用,
+		在工作空间中搜索对所选元素的引用,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:18:22.816
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:18:56.415
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:19:32.234
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:20:19.245
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:21:38.720
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY com.adobe.flexbuilder.project 4 43 2019-05-21 11:23:07.910
+!MESSAGE G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+!STACK 0
+java.io.FileNotFoundException: G:\jollyclass-player\swfplayer-family-test\bin-debug\JollyClassPlayer.swf (另一个程序正在使用此文件，进程无法访问。)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.buildSWF(ASApplicationBuilderNext.java:263)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASApplicationBuilderNext.build(ASApplicationBuilderNext.java:103)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASBuilderNext.build(ASBuilderNext.java:117)
+	at com.adobe.flexbuilder.multisdk.compiler.internal.ASItemBuilder.build(ASItemBuilder.java:93)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.buildItem(FlexProjectBuilder.java:708)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexProjectBuilder.build(FlexProjectBuilder.java:412)
+	at com.adobe.flexbuilder.project.compiler.internal.FlexIncrementalBuilder.build(FlexIncrementalBuilder.java:171)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2019-05-23 11:04:31.337 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_31
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jface 2 0 2019-05-23 11:08:05.130
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-23 11:08:05.130
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@41bc1a83),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,在工作空间中查找所有声明,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllDeclarationsAction@41bc1a83),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,工作空间中的声明,
+		在工作空间中搜索对所选元素的声明,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-23 11:08:05.130
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@2470b02c),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,在工作空间中查找所有引用,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,导航,null,true),
+		ActionHandler(com.adobe.flexbuilder.as.editor.ui.packageexplorer.actions.FlexPackageExplorerFindAllReferencesAction@2470b02c),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,工作空间中的引用,
+		在工作空间中搜索对所选元素的引用,
+		Category(org.eclipse.search.ui.category.search,搜索,搜索命令类别,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

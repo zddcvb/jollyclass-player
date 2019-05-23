@@ -18,7 +18,6 @@ package
 	import com.jollyclass.airplayer.util.ShapeUtil;
 	import com.jollyclass.airplayer.util.SwfInfoUtils;
 	import com.jollyclass.airplayer.util.VideoUtil;
-	
 	import flash.desktop.NativeApplication;
 	import flash.display.DisplayObject;
 	import flash.display.Loader;
@@ -136,92 +135,11 @@ package
 			NativeApplication.nativeApplication.addEventListener(Event.DEACTIVATE,onDeactivateHandler);
 		}
 		/**
-		 * 显示首屏的黑屏画面，避免flash加载的白屏出现
+		 * 开启主swf的键盘事件和循环事件
 		 */
-		private function showBlackUI():void
+		private function addMainApplicationKeyEvent():void
 		{
-			blackShape=ShapeUtil.createShape();
-			addChild(blackShape);
-		}
-		/**
-		 * 添加加载动画,根据type值判定加载哪个加载动画
-		 */
-		private function showLoadingUI(type:String):void
-		{
-			if(type==FieldConst.FAMILY_BOX){
-				loading_obj=new LoadingFamilyUI();
-			}else if(type==FieldConst.TEACHING_BOX){
-				loading_obj=new LoadingTeacherUI();
-			}
-			addChild(loading_obj);	
-		}
-		
-		/**
-		 * 显示错误对话框，提示用户拨打客服电话
-		 * @param info 需要显示的错误代码
-		 * @param telNum 动态指定客服电话
-		 */
-		private function showErroMsg( info:String,telNum:String):void
-		{
-			var _error_loading:Loader=new Loader();
-			_error_loading.contentLoaderInfo.addEventListener(Event.COMPLETE,function(event:Event):void{
-				addChild(_error_loading);
-				var error_mc:MovieClip=event.target.content as MovieClip;
-				if(telNum==null||telNum==""){
-					telNum=FieldConst.DEFAULT_TELPHONE;
-				}
-				error_mc.setText(info,telNum);
-				initErrorKeyEvent();
-			});
-			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
-				sendAndShowErrorMsg(ErrorMsgNumber.ERROR_LOADING_FAILED,dataInfo.customer_service_tel);
-			});
-			var error_swf_path:String=PathUtil.selectErrorPath(dataInfo.product_type);
-			_error_loading.load(new URLRequest(error_swf_path));
-		}
-		/**
-		 * 添加播放器皮肤，获得皮肤的影片剪辑,显示到界面中，但是visible属性为fasle，hiderPlayer方法即为隐藏，具体的方法执行在player.swf文件中。
-		 */
-		private function addPlayer():void
-		{
-			_player_loading.contentLoaderInfo.addEventListener(Event.COMPLETE,function(event:Event):void{
-				player_mc=event.target.content as MovieClip;
-				//添加播放器皮肤，并隐藏
-				player_mc.hidePlayer();
-				addChild(_player_loading);
-			});
-			_player_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
-				sendAndShowErrorMsg(ErrorMsgNumber.PLAYER_LOADING_FAILED,dataInfo.customer_service_tel);
-			});
-			var player_swf:String=PathUtil.selectPlayerPath(dataInfo.product_type);
-			_player_loading.load(new URLRequest(player_swf));
-		}
-		/**
-		 * 卸载播放进度条
-		 */
-		private function unloadPlayer():void
-		{
-			if(_player_loading!=null){
-				_player_loading.unload();
-			}
-		}
-		/**
-		 * 上报错误信息以及显示错误ui
-		 * @param info 需要显示的错误代码
-		 * @param telNum 动态指定客服电话
-		 */
-		private function sendAndShowErrorMsg(info:String,telNum:String):void
-		{
-			AneUtils.sendErrorMsg(info);
-			showErroMsg(info,telNum);
-		}
-		/**
-		 * 监听应用状态为不激活状态时，则直接退出应用。
-		 */
-		protected function onDeactivateHandler(event:Event):void
-		{
-			NativeApplication.nativeApplication.removeEventListener(Event.DEACTIVATE,onDeactivateHandler);
-			NativeApplication.nativeApplication.exit(0);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDownHandler);
 		}
 		/**
 		 * 接收android系统发送的消息
@@ -232,10 +150,10 @@ package
 			if (args.length>0) 
 			{
 				dataInfo=ParseDataUtils.parseDataInfo(args);
+				//AneUtils.showShortToast(dataInfo.toString());
 				if(dataInfo!=null){
 					showLoadingUI(dataInfo.product_type);
 					removeChild(blackShape);
-					
 					var path:String=dataInfo.swfPath;
 					if(path.indexOf(".mp4")!=-1||path.indexOf(".flv")!=-1){
 						//打开视频播放器
@@ -257,14 +175,53 @@ package
 			NativeApplication.nativeApplication.removeEventListener(InvokeEvent.INVOKE,onInvokeHandler);
 		}
 		/**
+		 * 监听应用状态为不激活状态时，则直接退出应用。
+		 */
+		protected function onDeactivateHandler(event:Event):void
+		{
+			NativeApplication.nativeApplication.removeEventListener(Event.DEACTIVATE,onDeactivateHandler);
+			NativeApplication.nativeApplication.exit(0);
+		}
+		/**
+		 * 显示首屏的黑屏画面，避免flash加载的白屏出现
+		 */
+		private function showBlackUI():void
+		{
+			blackShape=ShapeUtil.createShape();
+			addChild(blackShape);
+		}
+		/**
+		 * 添加加载动画,根据type值判定加载哪个加载动画
+		 */
+		private function showLoadingUI(type:String):void
+		{
+			switch(type){
+				case FieldConst.FAMILY_BOX:
+				case FieldConst.XSD_FAMILY_BOX:
+				case FieldConst.WTRON_FAMILY_BOX:
+					loading_obj=new LoadingFamilyUI();
+					break;
+				case FieldConst.TEACHING_BOX:
+				case FieldConst.XSD_TEACHER_BOX:
+				case FieldConst.WTRON_TEACHER_BOX:
+					loading_obj=new LoadingTeacherUI();
+					break;
+				default:
+					break;
+			}
+			addChild(loading_obj);	
+		}
+		/**
 		 * 加载图片查看器
 		 */
 		private function loadImg(imgPath:String):void
 		{
-			var imgUtil:ImgUtil=new ImgUtil();
-			imgLoader = imgUtil.loadImg(imgPath);
+			imgLoader = ImgUtil.loadImg(imgPath);
 			addChild(imgLoader);
 		}
+		/**
+		 * 加载视频播放器
+		 */
 		private function initPlayer():void
 		{
 			video_util=new VideoUtil();
@@ -282,6 +239,7 @@ package
 			var nowTime:Number;
 			switch(code){
 				case SwfKeyCode.ENTER_XSD_CODE:
+					//视频播放暂停
 					if(video_play_status){
 						video_util.pause();
 					}else{
@@ -320,6 +278,73 @@ package
 					break;
 			}			
 		}
+		/**
+		 * 显示错误对话框，提示用户拨打客服电话
+		 * @param info 需要显示的错误代码
+		 * @param telNum 动态指定客服电话
+		 */
+		private function showErroMsg( info:String,telNum:String):void
+		{
+			var _error_loading:Loader=new Loader();
+			_error_loading.contentLoaderInfo.addEventListener(Event.COMPLETE,function(event:Event):void{
+				addChild(_error_loading);
+				var error_mc:MovieClip=event.target.content as MovieClip;
+				if(telNum==null||telNum==""){
+					telNum=FieldConst.DEFAULT_TELPHONE;
+				}
+				var error_msg:String=info.substr(0,info.indexOf(":"));
+				error_mc.setText(error_msg,telNum);
+				initErrorKeyEvent();
+			});
+			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
+				sendAndShowErrorMsg(ErrorMsgNumber.ERROR_LOADING_FAILED,dataInfo.customer_service_tel);
+			});
+			var type:String;
+			if(dataInfo!=null){
+				type=dataInfo.product_type;
+			}
+			var error_swf_path:String=PathUtil.selectErrorPath(type);
+			_error_loading.load(new URLRequest(error_swf_path));
+			
+			
+		}
+		/**
+		 * 添加播放器皮肤，获得皮肤的影片剪辑,显示到界面中，但是visible属性为fasle，hiderPlayer方法即为隐藏，具体的方法执行在player.swf文件中。
+		 */
+		private function addPlayer():void
+		{
+			_player_loading.contentLoaderInfo.addEventListener(Event.COMPLETE,function(event:Event):void{
+				player_mc=event.target.content as MovieClip;
+				//添加播放器皮肤，并隐藏
+				player_mc.hidePlayer();
+				addChild(_player_loading);
+			});
+			_player_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
+				sendAndShowErrorMsg(ErrorMsgNumber.PLAYER_LOADING_FAILED,dataInfo.customer_service_tel);
+			});
+			var player_swf:String=PathUtil.selectPlayerPath(dataInfo.product_type);
+			_player_loading.load(new URLRequest(player_swf));
+		}
+		/**
+		 * 卸载播放进度条
+		 */
+		private function unloadPlayer():void
+		{
+			if(_player_loading!=null){
+				_player_loading.unload();
+			}
+		}
+		/**
+		 * 上报错误信息以及显示错误ui
+		 * @param info 需要显示的错误代码
+		 * @param telNum 动态指定客服电话
+		 */
+		private function sendAndShowErrorMsg(info:String,telNum:String):void
+		{
+			AneUtils.sendErrorMsg(info);
+			showErroMsg(info,telNum);
+		}
+		
 		private function initErrorKeyEvent():void
 		{
 			stage.addEventListener(KeyboardEvent.KEY_DOWN,onErrorKeyDown);
@@ -347,7 +372,7 @@ package
 		private function readFileFromAndroidDIC(swfPath:String):void
 		{
 			if (swfPath!=null) 
-			{
+			{/**/
 				var file:File=new File(swfPath);
 				if(file.exists){
 					file.addEventListener(Event.COMPLETE,onFileCompleteHandler);
@@ -430,7 +455,6 @@ package
 				case FieldConst.FAMILY_BOX:
 				case FieldConst.XSD_FAMILY_BOX:
 				case FieldConst.WTRON_FAMILY_BOX:
-				{
 					if(course_mc.totalFrames<=FieldConst.INTERACTION_FRAME){
 						//当swf文件的总帧数小于50，则return，不执行onEnterFrameHandler事件
 						return;
@@ -439,31 +463,20 @@ package
 					}
 					stage.addEventListener(Event.ENTER_FRAME,onEnterFrameHandler);
 					break;
-				}
 				case FieldConst.TEACHING_BOX:
 				case FieldConst.XSD_TEACHER_BOX:
 				case FieldConst.WTRON_TEACHER_BOX:
-				{
 					if(dataInfo.play_scene==0){
 						stopTeachingTimer();
 					}else{
 						startTeachingTimer();
 					}
 					break;
-				}
 				default:
-				{
 					break;
-				}
 			}
 		}
-		/**
-		 * 开启主swf的键盘事件和循环事件
-		 */
-		private function addMainApplicationKeyEvent():void
-		{
-			stage.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDownHandler);
-		}
+	
 		/**
 		 * 循环获取当前swf文件的帧数
 		 */
@@ -541,6 +554,8 @@ package
 							break;
 					}
 					break;
+				default:
+					break;
 			}
 		}
 		/**
@@ -556,6 +571,9 @@ package
 					keyCodeServiceFactory=new JollyClassKeyCodeFactoryImpl();
 					break;
 				case FieldConst.OTHER_RESOURCES:
+					keyCodeServiceFactory=new CommonKeyCodeFactoryImpl();
+					break;
+				default:
 					keyCodeServiceFactory=new CommonKeyCodeFactoryImpl();
 					break;
 			}
@@ -743,15 +761,10 @@ package
 			{
 				case 1:
 				case 2:
-				{
 					dialog_mc.goServiceUI();
 					break;
-				}
-					
 				default:
-				{
 					break;
-				}
 			}
 			
 		}

@@ -14,11 +14,10 @@ package com.jollyclass.airplayer.util
 		/**
 		 * 发送广播数据至android应用，固定的action：android.intent.action.AIR_DATA
 		 * @param isPlaying 当前swf是否播放
-		 * 
 		 */		
 		public static function sendData(isPlaying:Boolean):void
 		{
-			jollyClassAne.sendBroadcast(isPlaying)
+			jollyClassAne.sendBroadcast(isPlaying);
 		}
 		/**
 		 * 发送广播只android应用，自定义action，教学端

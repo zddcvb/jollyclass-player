@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="52" version="2.0">
+<workbench progressCount="50" version="2.0">
 <workbenchAdvisor/>
 <window height="768" maximized="true" width="1024" x="200" y="200">
-<fastViewData fastViewLocation="1024"/>
+<fastViewData fastViewLocation="1024">
+<orientation position="512" view="org.eclipse.ui.views.ContentOutline"/>
+</fastViewData>
 <perspectiveBar>
 <itemSize x="160"/>
 </perspectiveBar>
@@ -12,12 +14,13 @@
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="206" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="101" y="22"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="84" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="61" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="198" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -30,22 +33,16 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassPlayer.as" partName="JollyClassPlayer.as" path="G:/jollyclass-player/swfplayer-family-test/src/JollyClassPlayer.as" title="JollyClassPlayer.as" tooltip="swfplayer-family-test/src/JollyClassPlayer.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/swfplayer-family-test/src/JollyClassPlayer.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3248" selectionTopPixel="1501"/>
+<editor id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassPlayer.as" partName="JollyClassPlayer.as" path="G:/jollyclass-player/swfplayer/src/JollyClassPlayer.as" title="JollyClassPlayer.as" tooltip="swfplayer/src/JollyClassPlayer.as" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/swfplayer/src/JollyClassPlayer.as"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1743" selectionTopPixel="360"/>
 </editor>
-<editor id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ParseDataUtils.as" partName="ParseDataUtils.as" path="G:/jollyclass-player/swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as" title="ParseDataUtils.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2402" selectionTopPixel="690"/>
-</editor>
-<editor activePart="true" focus="true" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ImgUtil.as" partName="ImgUtil.as" path="G:/jollyclass-player/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as" title="ImgUtil.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="484" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="JollyClassPlayer-app.xml" partName="JollyClassPlayer-app.xml" path="G:/jollyclass-player/swfplayer/src/JollyClassPlayer-app.xml" title="JollyClassPlayer-app.xml" tooltip="swfplayer/src/JollyClassPlayer-app.xml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/swfplayer/src/JollyClassPlayer-app.xml"/>
 </editor>
 </editors>
 <views>
@@ -54,9 +51,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="问题">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="问题">
-<expanded>
-<category IMemento.internal.id="错误（3 项）"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="494"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -71,17 +65,19 @@
 <view id="com.adobe.flexbuilder.packageexplorer" partName="包资源管理器">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" fpeIsFlat="0" fpeSortBy="1" sorter="1">
 <fpeExpanded>
-<fpeElement fpePath="/swfplayer-family-test"/>
+<fpeElement fpePath="/swfplayer"/>
+<fpeElement fpePath="/swfplayer/src"/>
+<fpeElement fpePath="/swfplayer/src/%typeDefaultPackage"/>
+<fpeElement fpePath="/swfplayer/src/com/jollyclass/airplayer"/>
+<fpeElement fpePath="/swfplayer/src/com/jollyclass/airplayer/constant"/>
 <fpeElement fpePath="/swfplayer-family-test/src"/>
 <fpeElement fpePath="/swfplayer-family-test/src/%typeDefaultPackage"/>
 <fpeElement fpePath="/swfplayer-family-test/src/com/jollyclass/airplayer"/>
-<fpeElement fpePath="/swfplayer-family-test/src/com/jollyclass/airplayer/constant"/>
-<fpeElement fpePath="/swfplayer-family-test/src/com/jollyclass/airplayer/domain"/>
 <fpeElement fpePath="/swfplayer-family-test/src/com/jollyclass/airplayer/util"/>
 <fpeElement fpePath="/swfplayer-family-test/src/swf"/>
 </fpeExpanded>
 <fpeSelection>
-<fpeElement fpePath="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
+<fpeElement fpePath="/swfplayer/src/JollyClassPlayer-app.xml"/>
 </fpeSelection>
 <filters>
 <filter element=".flexProperties" isEnabled="true"/>
@@ -104,10 +100,10 @@
 <filter element=".*" isEnabled="false"/>
 </filters>
 <expanded>
-<element path="/swfplayer-family-test"/>
+<element path="/swfplayer"/>
 </expanded>
 <selection>
-<element path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
+<element path="/swfplayer/src/JollyClassPlayer-app.xml"/>
 </selection>
 </viewState>
 </view>
@@ -124,7 +120,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" activePerspective="com.adobe.flexbuilder.editors.mxml.ui.perspectives.development">
+<perspectives activePart="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" activePerspective="com.adobe.flexbuilder.editors.mxml.ui.perspectives.development">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.adobe.flexbuilder.mxml.editor.ui.perspectives.DevelopmentPerspectiveFactory" id="com.adobe.flexbuilder.editors.mxml.ui.perspectives.development" label="Flash"/>
 <alwaysOnActionSet id="com.adobe.flexbuilder.flashbridge.flashproject.actionSet"/>
@@ -149,8 +145,8 @@
 <alwaysOnActionSet id="com.adobe.flexbuilder.dcrad.actionSet"/>
 <alwaysOnActionSet id="com.adobe.flexbuilder.zzz.editors.common.ui.project.publish"/>
 <alwaysOnActionSet id="com.adobe.flexbuilder.exportimport.actionSet1"/>
-<alwaysOnActionSet id="com.adobe.flexbuilder.as.editor.ui.NavigationActions"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
+<alwaysOnActionSet id="com.adobe.flexbuilder.as.editor.ui.NavigationActions"/>
 <show_view_action id="com.adobe.flexbuilder.packageexplorer"/>
 <show_view_action id="org.eclipse.ui.views.ContentOutline"/>
 <show_view_action id="org.eclipse.ui.views.ProblemView"/>
@@ -190,20 +186,17 @@
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="com.adobe.flexbuilder.packageexplorer"/>
-<fastViewBars>
-<fastViewBar fastViewLocation="16384" id="outlineHolder" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
-<fastViews>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.3"/>
-</fastViews>
-</fastViewBar>
-</fastViewBars>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<fastViewBars/>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@74241391">
 <folder activePageID="com.adobe.flexbuilder.packageexplorer" appearance="2" expanded="2">
 <page content="com.adobe.flexbuilder.packageexplorer" label="包资源管理器"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="大纲"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
 </presentation>
 </folder>
 </info>
@@ -233,12 +226,6 @@
 </presentation>
 </folder>
 </info>
-<info folder="true" part="outlineHolder" ratio="0.4992272" ratioLeft="323" ratioRight="324" relationship="4" relative="org.eclipse.ui.internal.ViewStack@74241391">
-<folder appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
-</folder>
-</info>
 </mainWindow>
 </layout>
 </perspective>
@@ -246,161 +233,183 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer-family-test/src/JollyClassPlayer.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/JollyClassPlayer.as"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/FieldConst.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/PathConst.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/ErrorMsgNumber.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/SwfKeyCode.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/PathUtil.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/ShapeUtil.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/AneUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/FileUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/LoggerUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/VideoUtil.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/util/SwfInfoUtils.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/ErrorMsgNumber.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/FieldConst.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/PathConst.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/constant/SwfKeyCode.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/service/impl/CommonKeyCodeServiceImpl.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/service/impl/JollyClassKeyCodeServiceImpl.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/service/KeyCodeService.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" path="/swfplayer/src/com/jollyclass/airplayer/domain/SwfInfo.as"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/swfplayer/src/JollyClassPlayer-app.xml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/swfplayer/src/JollyClassPlayer-app.xml"/>
 </editors>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="11809" y="0"/>
+<position info="not_deleted" x="6405" y="0"/>
+</item>
+<item historyLabel="ParseDataUtils.as" index="1">
+<position info="not_deleted" x="2813" y="25"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="17759" y="18"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="15644" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="12125" y="19"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="12460" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7181" y="0"/>
+<position info="not_deleted" x="6405" y="0"/>
 </item>
 <item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="2443" y="0"/>
+<position info="not_deleted" x="1122" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7092" y="0"/>
+<position info="not_deleted" x="7636" y="0"/>
 </item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="2410" y="0"/>
+<item historyLabel="FieldConst.as" index="3">
+<position info="not_deleted" x="1264" y="0"/>
 </item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7092" y="0"/>
+<item historyLabel="PathConst.as" index="4">
+<position info="not_deleted" x="678" y="0"/>
 </item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7033" y="0"/>
+<item historyLabel="ErrorMsgNumber.as" index="5">
+<position info="not_deleted" x="1744" y="0"/>
 </item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7366" y="0"/>
+<item historyLabel="FieldConst.as" index="3">
+<position info="not_deleted" x="1264" y="0"/>
 </item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="664" y="0"/>
+<item historyLabel="PathConst.as" index="4">
+<position info="not_deleted" x="678" y="0"/>
 </item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7366" y="0"/>
+<item historyLabel="SwfKeyCode.as" index="6">
+<position info="not_deleted" x="365" y="0"/>
 </item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7135" y="0"/>
-</item>
-<item historyLabel="JollyClassDataInfo.as" index="1">
-<position info="not_deleted" x="598" y="0"/>
-</item>
-<item historyLabel="JollyClassDataInfo.as" index="1">
-<position info="not_deleted" x="2594" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="664" y="0"/>
+<item historyLabel="ErrorMsgNumber.as" index="5">
+<position info="not_deleted" x="370" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7104" y="0"/>
-</item>
-<item historyLabel="JollyClassDataInfo.as" index="1">
-<position info="not_deleted" x="2653" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="19754" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="1566" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="19826" y="0"/>
-</item>
-<item historyLabel="JollyClassDataInfo.as" index="1">
-<position info="not_deleted" x="912" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="3182" y="0"/>
-</item>
-<item historyLabel="JollyClassDataInfo.as" index="1">
-<position info="not_deleted" x="912" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="7035" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="3537" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="6962" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="2410" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="11556" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="2">
-<position info="not_deleted" x="2834" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="6586" y="0"/>
-</item>
-<item historyLabel="ParseDataUtils.as" index="3">
-<position info="not_deleted" x="2402" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="13165" y="0"/>
-</item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="488" y="0"/>
-</item>
-<item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="13165" y="0"/>
+<position info="not_deleted" x="7636" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
 <position/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="3924" y="0"/>
+<position/>
 </item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="567" y="0"/>
+<item historyLabel="ParseDataUtils.as" index="7">
+<position info="not_deleted" x="1376" y="0"/>
+</item>
+<item historyLabel="PathUtil.as" index="8">
+<position info="not_deleted" x="682" y="0"/>
+</item>
+<item historyLabel="ShapeUtil.as" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="AneUtils.as" index="10">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="FileUtils.as" index="11">
+<position info="not_deleted" x="641" y="0"/>
+</item>
+<item historyLabel="ImgUtil.as" index="12">
+<position info="not_deleted" x="469" y="0"/>
+</item>
+<item historyLabel="LoggerUtils.as" index="13">
+<position info="not_deleted" x="1273" y="0"/>
+</item>
+<item historyLabel="ParseDataUtils.as" index="7">
+<position info="not_deleted" x="1376" y="0"/>
+</item>
+<item historyLabel="VideoUtil.as" index="14">
+<position info="not_deleted" x="520" y="0"/>
+</item>
+<item historyLabel="SwfInfoUtils.as" index="15">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ErrorMsgNumber.as" index="16">
+<position info="not_deleted" x="370" y="0"/>
+</item>
+<item historyLabel="FieldConst.as" index="17">
+<position info="not_deleted" x="1264" y="0"/>
+</item>
+<item historyLabel="PathConst.as" index="18">
+<position info="not_deleted" x="678" y="0"/>
+</item>
+<item historyLabel="SwfKeyCode.as" index="19">
+<position info="not_deleted" x="286" y="0"/>
+</item>
+<item historyLabel="CommonKeyCodeServiceImpl.as" index="20">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="JollyClassKeyCodeServiceImpl.as" index="21">
+<position info="not_deleted" x="637" y="0"/>
+</item>
+<item historyLabel="KeyCodeService.as" index="22">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="JollyClassDataInfo.as" index="23">
+<position info="not_deleted" x="338" y="0"/>
+</item>
+<item historyLabel="SwfInfo.as" index="24">
+<position info="not_deleted" x="306" y="0"/>
+</item>
+<item historyLabel="SwfKeyCode.as" index="19">
+<position info="not_deleted" x="286" y="0"/>
+</item>
+<item historyLabel="KeyCodeService.as" index="22">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="JollyClassPlayer-app.xml" index="25">
+<position info="not_deleted" x="932" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="4010" y="0"/>
-</item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="535" y="0"/>
+<position info="not_deleted" x="13746" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="3640" y="0"/>
-</item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="535" y="0"/>
+<position info="not_deleted" x="3714" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="3272" y="0"/>
-</item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="484" y="0"/>
+<position info="not_deleted" x="3808" y="0"/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="3272" y="0"/>
-</item>
-<item historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="484" y="0"/>
+<position/>
 </item>
 <item historyLabel="JollyClassPlayer.as" index="0">
-<position info="not_deleted" x="3248" y="0"/>
+<position info="not_deleted" x="4401" y="0"/>
 </item>
-<item active="true" historyLabel="ImgUtil.as" index="4">
-<position info="not_deleted" x="484" y="0"/>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="5777" y="13"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="4593" y="0"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="4664" y="0"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="10735" y="22"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="4827" y="0"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="4664" y="0"/>
+</item>
+<item historyLabel="JollyClassPlayer.as" index="0">
+<position info="not_deleted" x="1743" y="0"/>
+</item>
+<item active="true" historyLabel="JollyClassPlayer-app.xml" index="26">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -408,13 +417,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="outlineHolder"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@74241391"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 <trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
@@ -427,50 +429,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ImgUtil.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="JollyClassPlayer-app.xml" tooltip="swfplayer/src/JollyClassPlayer-app.xml">
+<persistable path="/swfplayer/src/JollyClassPlayer-app.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ParseDataUtils.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="SwfInfo.as" tooltip="swfplayer/src/com/jollyclass/airplayer/domain/SwfInfo.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/domain/SwfInfo.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassDataInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassDataInfo.as" tooltip="swfplayer/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/domain/JollyClassDataInfo.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="FieldConst.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/constant/FieldConst.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/constant/FieldConst.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="KeyCodeService.as" tooltip="swfplayer/src/com/jollyclass/airplayer/service/KeyCodeService.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/service/KeyCodeService.as"/>
 </file>
-<file factoryID="com.adobe.flexbuilder.editors.derived.ui.startpage.StartPageEditorInput" id="com.adobe.flexbuilder.ui.StartPage" name="Web 浏览器" tooltip="Flash Builder 欢迎屏幕">
-<persistable iconpath="platform:/plugin/com.adobe.flexbuilder.ui/icons/fb_app_16.png" style="20" tooltip="Flash Builder 欢迎屏幕" url="file:/D:/developTools/adobe-AIR/Adobe Flash Builder 4.7 (64 Bit)/eclipse/plugins/com.adobe.flexbuilder.ui.nl1_4.7.0.349722/nl/zh/welcome/index.html?firstLaunch=false&amp;edition=stnd&amp;version=470"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassKeyCodeServiceImpl.as" tooltip="swfplayer/src/com/jollyclass/airplayer/service/impl/JollyClassKeyCodeServiceImpl.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/service/impl/JollyClassKeyCodeServiceImpl.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="JollyClassPlayer.as" tooltip="swfplayer-family-test/src/JollyClassPlayer.as">
-<persistable path="/swfplayer-family-test/src/JollyClassPlayer.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="CommonKeyCodeServiceImpl.as" tooltip="swfplayer/src/com/jollyclass/airplayer/service/impl/CommonKeyCodeServiceImpl.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/service/impl/CommonKeyCodeServiceImpl.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="PathUtil.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/util/PathUtil.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/util/PathUtil.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="SwfInfoUtils.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/SwfInfoUtils.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/SwfInfoUtils.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="loading_wtr_familybox.swf" tooltip="swfplayer-family-test/src/swf/loading_wtr_familybox.swf">
-<persistable path="/swfplayer-family-test/src/swf/loading_wtr_familybox.swf"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="VideoUtil.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/VideoUtil.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/VideoUtil.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="dialog.swf" tooltip="swfplayer-family-test/src/swf/dialog.swf">
-<persistable path="/swfplayer-family-test/src/swf/dialog.swf"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="LoggerUtils.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/LoggerUtils.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/LoggerUtils.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="XsdTeacherBoxInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/XsdTeacherBoxInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/XsdTeacherBoxInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ImgUtil.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/ImgUtil.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/ImgUtil.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="Info.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/Info.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/Info.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="FileUtils.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/FileUtils.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/FileUtils.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="XsdFamilyBoxInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/XsdFamilyBoxInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/XsdFamilyBoxInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="AneUtils.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/AneUtils.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/AneUtils.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="WtrTeacherBoxInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/WtrTeacherBoxInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/WtrTeacherBoxInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ShapeUtil.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/ShapeUtil.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/ShapeUtil.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="WtrFamilyBoxInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/WtrFamilyBoxInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/WtrFamilyBoxInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="PathUtil.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/PathUtil.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/PathUtil.as"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="DataInfo.as" tooltip="swfplayer-family-test/src/com/jollyclass/airplayer/domain/DataInfo.as">
-<persistable path="/swfplayer-family-test/src/com/jollyclass/airplayer/domain/DataInfo.as"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.adobe.flexbuilder.editors.actionscript.ActionScriptEditor" name="ParseDataUtils.as" tooltip="swfplayer/src/com/jollyclass/airplayer/util/ParseDataUtils.as">
+<persistable path="/swfplayer/src/com/jollyclass/airplayer/util/ParseDataUtils.as"/>
 </file>
 </mruList>
 </workbench>

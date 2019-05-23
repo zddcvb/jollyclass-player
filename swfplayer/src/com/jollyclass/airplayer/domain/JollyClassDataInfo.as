@@ -146,12 +146,6 @@ package com.jollyclass.airplayer.domain
 			_product_type = value;
 		}
 		
-		public function toString():String
-		{
-			return "JollyClassDataInfo[swfPath:"+_swfPath+",product_type:"+_product_type+",resource_type:"+_resource_type+",customer_service_tel"+_customer_service_tel+
-				",play_scene:"+_play_scene+",teaching_resource_id:"+_teaching_resource_id+",teaching_play_trial_duation:"+teaching_play_trial_duation+",package_name:"+package_name+",callback_activity_name:"+_callback_activity_name+",family_media_id:"+_family_media_id+",family_material_id:"+_family_material_id+"]";
-		}
-
 		public function get teaching_play_trial_duation():String
 		{
 			return _teaching_play_trial_duation;
@@ -181,7 +175,12 @@ package com.jollyclass.airplayer.domain
 		{
 			_callback_activity_name = value;
 		}
-
+		
+		public function toString():String
+		{
+			return "JollyClassDataInfo[swfPath:"+_swfPath+",product_type:"+_product_type+",resource_type:"+_resource_type+",customer_service_tel"+_customer_service_tel+
+				",play_scene:"+_play_scene+",teaching_resource_id:"+_teaching_resource_id+",teaching_play_trial_duation:"+teaching_play_trial_duation+",package_name:"+package_name+",callback_activity_name:"+_callback_activity_name+",family_media_id:"+_family_media_id+",family_material_id:"+_family_material_id+"]";
+		}
 		
 	}
 }

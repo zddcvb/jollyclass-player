@@ -7,6 +7,7 @@ package com.jollyclass.airplayer.util
 	 * 1、error信息的swf文件，根据不同的type，选择不同的error文件。
 	 * 2、player播放器皮肤swf文件，根据不同的type，显示不同的player。
 	 * 3、dailog信息的swf文件，根据不同的type，显示不同的开通服务dailgo文件。
+	 * @author 邹丹丹
 	 */
 	public class PathUtil
 	{
@@ -19,25 +20,25 @@ package com.jollyclass.airplayer.util
 		 */
 		public static function selectErrorPath(type:String):String
 		{
-			var str:String;
+			var error_swf:String;
 			switch(type){
 				case FieldConst.XSD_TEACHER_BOX:
-					str=PathConst.ERROR_XSD_TEACHERBOX_SWF;
+					error_swf=PathConst.ERROR_XSD_TEACHERBOX_SWF;
 					break;
 				case FieldConst.XSD_FAMILY_BOX:
-					str=PathConst.ERROR_XSD_FAMILYBOX_SWF;
+					error_swf=PathConst.ERROR_XSD_FAMILYBOX_SWF;
 					break;
 				case FieldConst.WTRON_TEACHER_BOX:
-					str=PathConst.ERROR_WTRON_TEACHERBOX_SWF;
+					error_swf=PathConst.ERROR_WTRON_TEACHERBOX_SWF;
 					break;
 				case FieldConst.WTRON_FAMILY_BOX:
-					str=PathConst.ERROR_WTRON_FAMILYBOX_SWF;
+					error_swf=PathConst.ERROR_WTRON_FAMILYBOX_SWF;
 					break;
 				default:
-					str=PathConst.ERROR_SWF;
+					error_swf=PathConst.ERROR_SWF;
 					break;
 			}
-			return str;
+			return error_swf;
 		}
 		/**
 		 * player播放器皮肤swf文件，根据不同的type，显示不同的player。

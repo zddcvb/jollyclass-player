@@ -54,7 +54,6 @@ package com.jollyclass.airplayer.util
 					trace(totalTime);
 				}
 			}
-			
 		}
 		
 		protected function asyncErrorHandler(event:AsyncErrorEvent):void

@@ -34,6 +34,7 @@ package com.jollyclass.airplayer.util
 					str=PathConst.ERROR_WTRON_FAMILYBOX_SWF;
 					break;
 				default:
+					trace("error");
 					str=PathConst.ERROR_SWF;
 					break;
 			}
