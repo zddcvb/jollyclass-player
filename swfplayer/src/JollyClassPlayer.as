@@ -293,7 +293,7 @@ package
 					telNum=FieldConst.DEFAULT_TELPHONE;
 				}
 				var error_msg:String=info.substr(0,info.indexOf(":"));
-				error_mc.setText(error_msg,telNum);
+				error_mc.setText(dataInfo.resource_info,error_msg,telNum);
 				initErrorKeyEvent();
 			});
 			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
