@@ -4,8 +4,8 @@
 		<item value="251" key="DIALOG_WIDTH"/>
 		<item value="186" key="DIALOG_Y_ORIGIN"/>
 		<item value="1367" key="DIALOG_X_ORIGIN"/>
-		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="initErrorKeyEvent" key="selection"/>
+		<item value="sendAndShowErrorMsg" key="selection"/>
 		<list key="findhistory">
+			<item value="sendAndShowErrorMsg"/>
+			<item value="showErroMsg"/>
+			<item value="player_mc"/>
+			<item value="onPauseAndReplay"/>
+			<item value="ENTER_FRAME"/>
+			<item value="onDestoryAndSendData"/>
 			<item value="initErrorKeyEvent"/>
 			<item value="swfInfo"/>
-			<item value="show"/>
-			<item value="jx"/>
-			<item value="startTeachingTimer"/>
-			<item value="switchPlayerByProductType"/>
-			<item value="stage.addEventListener(Event.ENTER_FRAME,onEnterFrameHandler);"/>
-			<item value="onEnterFrameHandler"/>
 		</list>
 		<list key="replacehistory">
 		</list>

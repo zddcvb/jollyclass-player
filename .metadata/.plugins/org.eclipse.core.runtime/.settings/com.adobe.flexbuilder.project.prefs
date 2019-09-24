@@ -1,5 +1,6 @@
-#Fri Apr 19 11:19:33 GMT+08:00 2019
+#Mon Sep 23 09:57:07 CST 2019
 fbBuildID=349722
 eclipse.preferences.version=1
 workspaceFXPUUID=806329ef-9805-49a2-ab62-59d60ff0e43c
+com.adobe.flexbuilder.project.flex_sdks=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<sdks>\r\n  <sdk defaultSDK\="true" flashSDK\="false" location\="D\:/commonTools/builder/Adobe Flash Builder 4.7 (64 Bit)/sdks/4.16.0" name\="Flex 4.16.0"/>\r\n  <sdk flashSDK\="false" location\="D\:/commonTools/builder/Adobe Flash Builder 4.7 (64 Bit)/sdks/3.6.0" name\="Flex 3.6A"/>\r\n  <sdk flashSDK\="false" location\="D\:/commonTools/builder/Adobe Flash Builder 4.7 (64 Bit)/sdks/4.6.0" name\="Flex 4.6.0"/>\r\n  <sdk flashSDK\="true" location\="D\:/commonTools/builder/Adobe Flash Builder 4.7 (64 Bit)/eclipse/plugins/com.adobe.flash.compiler_4.7.0.349722/AIRSDK" name\="AIR SDK 22.0"/>\r\n</sdks>\r\n
 flexBuilderVersion=4.7.0.349722
