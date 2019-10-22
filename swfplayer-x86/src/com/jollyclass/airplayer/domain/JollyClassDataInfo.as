@@ -54,16 +54,30 @@ package com.jollyclass.airplayer.domain
 		 */
 		private var _callback_activity_name:String;
 		/**
+		 * 参数描述：在播放失败的场景下，把播放资源的相关信息显示出来，方便快速定位是哪个资源，这个参数适用于所有产品。
+		 */
+		private var _resource_info:String;
+		/**
 		 * 播放的媒资id。这个参数只适用于家庭端盒子
 		 */
 		private var _family_media_id:String;
 		/**
 		 * 播放的素材id。这个参数只适用于家庭端盒子
 		 */
+		
 		private var _family_material_id:String;
 		
 		public function JollyClassDataInfo()
 		{
+		}
+		public function get resource_info():String
+		{
+			return _resource_info;
+		}
+		
+		public function set resource_info(value:String):void
+		{
+			_resource_info = value;
 		}
 		
 		public function get customer_service_tel():String

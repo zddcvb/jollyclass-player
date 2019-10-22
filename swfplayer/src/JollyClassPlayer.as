@@ -18,6 +18,7 @@ package
 	import com.jollyclass.airplayer.util.ShapeUtil;
 	import com.jollyclass.airplayer.util.SwfInfoUtils;
 	import com.jollyclass.airplayer.util.VideoUtil;
+	
 	import flash.desktop.NativeApplication;
 	import flash.display.DisplayObject;
 	import flash.display.Loader;
@@ -38,7 +39,7 @@ package
 	import flash.system.LoaderContext;
 	import flash.utils.ByteArray;
 	import flash.utils.Timer;
-
+	
 	/**
 	 * 小水滴课堂主类，启动类，通过onstart方法启动。
 	 * @author 邹丹丹
@@ -149,26 +150,28 @@ package
 			var args:Array=event.arguments;
 			if (args.length>0) 
 			{
-				dataInfo=ParseDataUtils.parseDataInfo(args);
+				dataInfo=ParseDataUtils.parse2DataInfo(args);
 				//AneUtils.showShortToast(dataInfo.toString());
-				if(dataInfo!=null){
-					showLoadingUI(dataInfo.product_type);
-					removeChild(blackShape);
-					var path:String=dataInfo.swfPath;
-					if(path.indexOf(".mp4")!=-1||path.indexOf(".flv")!=-1){
-						//打开视频播放器
-						initPlayer();
-					}else if(path.indexOf(".swf")!=-1){
-						readFileFromAndroidDIC(dataInfo.swfPath);
-					}else if(path.lastIndexOf(".jpg")!=-1||path.lastIndexOf(".png")!=-1||path.lastIndexOf(".bmp")!=-1){
-						//打开图片查看器
-						loadImg(dataInfo.swfPath);
-					}else{
-						sendAndShowErrorMsg(ErrorMsgNumber.FILE_FORMAT_NOT_WRONG,FieldConst.DEFAULT_TELPHONE);
-					}				
+				//	if(dataInfo!=null){
+				showLoadingUI(dataInfo.product_type);
+				removeChild(blackShape);
+				var path:String=dataInfo.swfPath;
+				if(path.indexOf(".mp4")!=-1||path.indexOf(".flv")!=-1){
+					//打开视频播放器
+					initPlayer();
+				}else if(path.indexOf(".swf")!=-1){
+					//AneUtils.showShortToast(dataInfo.swfPath);
+					readFileFromAndroidDIC(dataInfo.swfPath);
+				}else if(path.lastIndexOf(".jpg")!=-1||path.lastIndexOf(".png")!=-1||path.lastIndexOf(".bmp")!=-1){
+					//打开图片查看器
+					loadImg(dataInfo.swfPath);
 				}else{
-					sendAndShowErrorMsg(ErrorMsgNumber.PARSE_DATA_ERROR,FieldConst.DEFAULT_TELPHONE);
-				}
+					sendAndShowErrorMsg(ErrorMsgNumber.FILE_FORMAT_NOT_WRONG,FieldConst.DEFAULT_TELPHONE);
+				}				
+				//}
+				//				else{
+				//					sendAndShowErrorMsg(ErrorMsgNumber.PARSE_DATA_ERROR,FieldConst.DEFAULT_TELPHONE);
+				//				}
 			}else{
 				sendAndShowErrorMsg(ErrorMsgNumber.INOVKE_DATA_LENGTH_ERROR,FieldConst.DEFAULT_TELPHONE);
 			}
@@ -195,6 +198,7 @@ package
 		 */
 		private function showLoadingUI(type:String):void
 		{
+			//	AneUtils.showShortToast(type);
 			switch(type){
 				case FieldConst.FAMILY_BOX:
 				case FieldConst.XSD_FAMILY_BOX:
@@ -207,6 +211,7 @@ package
 					loading_obj=new LoadingTeacherUI();
 					break;
 				default:
+					loading_obj=new LoadingTeacherUI();
 					break;
 			}
 			addChild(loading_obj);	
@@ -293,7 +298,7 @@ package
 					telNum=FieldConst.DEFAULT_TELPHONE;
 				}
 				var error_msg:String=info.substr(0,info.indexOf(":"));
-				error_mc.setText(dataInfo.resource_info,error_msg,telNum);
+				error_mc.setText(dataInfo.resource_info,error_msg,"");
 				initErrorKeyEvent();
 			});
 			_error_loading.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,function(event:IOErrorEvent):void{
@@ -371,6 +376,7 @@ package
 		 */
 		private function readFileFromAndroidDIC(swfPath:String):void
 		{
+			//AneUtils.showShortToast(swfPath);
 			if (swfPath!=null) 
 			{/**/
 				var file:File=new File(swfPath);
@@ -476,7 +482,7 @@ package
 					break;
 			}
 		}
-	
+		
 		/**
 		 * 循环获取当前swf文件的帧数
 		 */
@@ -830,11 +836,11 @@ package
 				default:
 					break;
 			}
-//			if(dataInfo.play_scene==1){
-//				AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.MAL_RENEW_NAME);
-//			}else{
-//				AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.SERVER_OPEN_NAME);
-//			}
+			//			if(dataInfo.play_scene==1){
+			//				AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.MAL_RENEW_NAME);
+			//			}else{
+			//				AneUtils.openApk(PathConst.PACKAGE_NAME,PathConst.SERVER_OPEN_NAME);
+			//			}
 			onDestroy();
 		}
 		/**
